@@ -1,0 +1,321 @@
+﻿<UserControl x:Class="GoodJOB.PostUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GoodJOB"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="1250" d:DesignWidth="850">
+    <UserControl.Resources>
+        <Style TargetType="Button" x:Key="btnPost">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="btn" BorderThickness="1.5" BorderBrush="#FF061615" Background="#FF284241" Opacity="1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="#F9F2e8"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="False">
+                                <Setter Property="Foreground" Value="#F9F2e8"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="btn" Property="Background" Value="#516d6b"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="False">
+                                <Setter TargetName="btn" Property="Background" Value="#FF284241"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Foreground" Value="#F9F2e8"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="btn" Property="Background" Value="#FF3B5351"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="Button" x:Key="btnPostReview">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" BorderThickness="1" BorderBrush="#FF284241" Background="Transparent">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#516d6b"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="#F9F2e8"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="border" Property="Background" Value="#516d6b"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#FF3B5351"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="ToggleButton" x:Key="cbbSelect">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToggleButton">
+                        <Border x:Name="border" Background="#FF284241" BorderThickness="2" BorderBrush="#FF061615">
+                            <ContentPresenter HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#516d6b"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="border" Property="Background" Value="#516d6b"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#FF3B5351"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="ComboBoxItem" x:Key="cbbItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ComboBoxItem">
+                        <Border x:Name="border" Background="#FF284241" BorderThickness="0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#516d6b"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="border" Property="Background" Value="#516d6b"/>
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#FF3B5351"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="ComboBox" x:Key="cbb">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ComboBox">
+                        <Grid>
+                            <Border x:Name="border" Background="#FF284241" BorderThickness="2" BorderBrush="#F9F2e8">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <ToggleButton
+                        Style="{StaticResource cbbSelect}"
+                        Name="ToggleButton"
+                        Grid.Column="1"
+                        Focusable="false"
+                        ClickMode="Press"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        BorderThickness="0"
+                        HorizontalContentAlignment="Right"
+                        Margin="0"
+                        IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}">
+                                <ToggleButton.Content>
+                                    <Rectangle
+                                Fill="#F9F2e8"
+                                Width="10"
+                                Height="5"
+                                Margin="0,5,0,0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"/>
+                                </ToggleButton.Content>
+                            </ToggleButton>
+                            <ContentPresenter
+                        x:Name="ContentSite"
+                        IsHitTestVisible="False"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"                        
+                        Content="{TemplateBinding SelectionBoxItem}"
+                        ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                        Margin="3,3,23,3"/>
+                            <TextBox
+                        x:Name="PART_EditableTextBox"
+                        Style="{x:Null}"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Margin="3,3,23,3"
+                        Focusable="True"
+                        Background="Transparent"
+                        Visibility="Hidden"
+                        IsReadOnly="{TemplateBinding IsReadOnly}"/>
+                            <Popup
+                        Name="Popup"
+                        Placement="Bottom"
+                        IsOpen="{TemplateBinding IsDropDownOpen}"
+                        AllowsTransparency="True"
+                        Focusable="False"
+                        PopupAnimation="Slide">
+                                <Grid
+                            Name="DropDown"
+                            SnapsToDevicePixels="True"
+                            MinWidth="{TemplateBinding ActualWidth}"
+                            MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                    <Border
+                                x:Name="DropDownBorder"
+                                Background="#FF284241"
+                                        BorderThickness="1.5"
+                                        BorderBrush="#FF061615"/>
+                                    <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
+                                        <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained"/>
+                                    </ScrollViewer>
+                                </Grid>
+                            </Popup>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid Loaded="Grid_Loaded" Background="#FF284241">
+        <Image Opacity="0.15" HorizontalAlignment="Left" Height="298" Margin="701,162,0,0" VerticalAlignment="Top" Width="284" Source="/Picture/Logo1.png"/>
+        <Grid Margin="10,0,10,8" Background="#F9F2e8" Opacity="0.8" >
+
+        </Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="0,0,0,10">
+            <Grid Height="1240">
+                <TextBlock FontSize="18" Foreground="#FF284241" FontWeight="Bold" HorizontalAlignment="Left" Margin="39,24,0,0" TextWrapping="Wrap" Text="Công việc" VerticalAlignment="Top"/>
+                <TextBlock FontSize="18" Foreground="#FF284241" FontWeight="Bold" HorizontalAlignment="Left" Margin="380,124,0,0" TextWrapping="Wrap" Text="Hình thức" VerticalAlignment="Top"/>
+                <TextBlock FontSize="18" Foreground="#FF284241" FontWeight="Bold" HorizontalAlignment="Left" Margin="513,73,0,0" TextWrapping="Wrap" Text="Kinh nghiệm" VerticalAlignment="Top"/>
+                <TextBlock FontSize="18" Foreground="#FF284241" FontWeight="Bold" HorizontalAlignment="Left" Margin="28,174,0,0" TextWrapping="Wrap" Text="Mức lương" VerticalAlignment="Top"/>
+                <TextBlock FontSize="18" Foreground="#FF284241" FontWeight="Bold" HorizontalAlignment="Left" Margin="50,74,0,0" TextWrapping="Wrap" Text="Lĩnh vực" VerticalAlignment="Top"/>
+                <TextBlock FontSize="18" Foreground="#FF284241" FontWeight="Bold" HorizontalAlignment="Left" Margin="31,843,0,0" TextWrapping="Wrap" Text="Mô tả công việc" TextAlignment="Right" VerticalAlignment="Top" Width="90"/>
+                <CheckBox x:Name="cbFullTime" FontSize="15" Content="Full-time" HorizontalAlignment="Left" Margin="478,130,0,0" VerticalAlignment="Top" Checked="cbFullTime_Checked"/>
+                <CheckBox x:Name="cbPartTime" FontSize="15" Content="Part-time" HorizontalAlignment="Left" Margin="593,130,0,0" VerticalAlignment="Top" Checked="cbPartTime_Checked"/>
+                <CheckBox x:Name="cbIntern" FontSize="15" Content="Thực tập" HorizontalAlignment="Left" Margin="710,130,0,0" VerticalAlignment="Top" Checked="cbIntern_Checked"/>
+
+
+                <ComboBox x:Name="cbbField" FontSize="14" Style="{StaticResource cbb}" HorizontalAlignment="Left" Margin="133,71,0,0" VerticalAlignment="Top" Width="160" Foreground="#F9F2e8" SelectionChanged="cbbField_SelectionChanged" Height="30">
+                    <ComboBox.ItemContainerStyle>
+                        <Style BasedOn="{StaticResource cbbItem}" TargetType="ComboBoxItem"/>
+                    </ComboBox.ItemContainerStyle>
+                    <ComboBoxItem>Chọn</ComboBoxItem>
+                    <ComboBoxItem>Công nghệ</ComboBoxItem>
+                    <ComboBoxItem>Kỹ thuật</ComboBoxItem>
+                    <ComboBoxItem>Thiết kế</ComboBoxItem>
+                    <ComboBoxItem>Kinh tế</ComboBoxItem>
+                    <ComboBoxItem>Du lịch</ComboBoxItem>
+                    <ComboBoxItem>Khác</ComboBoxItem>
+                </ComboBox>
+                <TextBox x:Name="txbJobName" FontWeight="Medium" FontSize="15" Text="" BorderThickness="1.5" BorderBrush="#FF284241" Background="Transparent" HorizontalAlignment="Left" Margin="133,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="655" Height="30" Padding="2"/>
+                <ComboBox x:Name="cbbExp" Style="{StaticResource cbb}" FontSize="14" HorizontalAlignment="Left" Margin="628,71,0,0" VerticalAlignment="Top" Width="160" Foreground="#FFF9F2E8" Height="30">
+                    <ComboBox.ItemContainerStyle>
+                        <Style BasedOn="{StaticResource cbbItem}" TargetType="{x:Type ComboBoxItem}"/>
+                    </ComboBox.ItemContainerStyle>
+                    <ComboBoxItem Content="Chọn"/>
+                    <ComboBoxItem Content="Không cần"/>
+                    <ComboBoxItem Content="1 năm"/>
+                    <ComboBoxItem Content="2 năm"/>
+                    <ComboBoxItem Content="3 năm"/>
+                    <ComboBoxItem Content="Trên 3 năm"/>
+                </ComboBox>
+                <TextBlock FontSize="18" Foreground="#FF284241" FontWeight="Bold" HorizontalAlignment="Left" Margin="42,124,0,0" TextWrapping="Wrap" Text="Thời gian" VerticalAlignment="Top"/>
+                <ComboBox x:Name="cbbWorkTime" FontSize="14" Style="{StaticResource cbb}" HorizontalAlignment="Left" Margin="133,123,0,0" VerticalAlignment="Top" Width="160" Foreground="#FFF9F2E8" Height="30">
+                    <ComboBox.ItemContainerStyle>
+                        <Style BasedOn="{StaticResource cbbItem}" TargetType="{x:Type ComboBoxItem}"/>
+                    </ComboBox.ItemContainerStyle>
+                    <ComboBoxItem Content="Chọn"/>
+                    <ComboBoxItem Content="Dưới 1 tháng"/>
+                    <ComboBoxItem Content="1 đến 3 tháng"/>
+                    <ComboBoxItem Content="3 đến 6 tháng"/>
+                    <ComboBoxItem Content="12 tháng"/>
+                    <ComboBoxItem Content="Dài hạn"/>
+                </ComboBox>
+                <ComboBox x:Name="cbbSalary" FontSize="14" Style="{StaticResource cbb}" HorizontalAlignment="Left" Margin="133,174,0,0" VerticalAlignment="Top" Width="160" Foreground="#FFF9F2E8" SelectionChanged="cbbSalary_SelectionChanged" Height="30">
+                    <ComboBox.ItemContainerStyle>
+                        <Style BasedOn="{StaticResource cbbItem}" TargetType="{x:Type ComboBoxItem}"/>
+                    </ComboBox.ItemContainerStyle>
+                    <ComboBoxItem Content="Chọn"/>
+                    <ComboBoxItem Content="Theo sản phẩm"/>
+                    <ComboBoxItem Content="Theo giờ"/>
+                    <ComboBoxItem Content="Theo tháng"/>
+                </ComboBox>
+                <TextBlock x:Name="txblSalaryFrom" FontSize="18" Foreground="#FF284241" HorizontalAlignment="Left" Margin="312,177,0,0" TextWrapping="Wrap" Text="Từ" VerticalAlignment="Top"/>
+                <TextBlock x:Name="txblSalaryTo" FontSize="18" Foreground="#FF284241" HorizontalAlignment="Left" Margin="500,177,0,0" TextWrapping="Wrap" Text="Đến" VerticalAlignment="Top"/>
+
+                <TextBlock FontSize="18" Foreground="#FF284241" FontWeight="Bold" HorizontalAlignment="Left" Margin="385,1112,0,0" TextWrapping="Wrap" Text="Thời hạn" VerticalAlignment="Top" Width="75"/>
+                <ComboBox x:Name="cbbPostTime" FontSize="14" Style="{StaticResource cbb}" HorizontalAlignment="Left" Margin="468,1109,0,0" VerticalAlignment="Top" Width="153" Foreground="#FFF9F2E8" SelectionChanged="cbbPostTime_SelectionChanged" Height="30">
+                    <ComboBox.ItemContainerStyle>
+                        <Style BasedOn="{StaticResource cbbItem}" TargetType="{x:Type ComboBoxItem}"/>
+                    </ComboBox.ItemContainerStyle>
+                    <ComboBoxItem Content="Chọn"/>
+                    <ComboBoxItem Content="Dưới 1 tháng"/>
+                    <ComboBoxItem Content="1 tháng"/>
+                    <ComboBoxItem Content="2 tháng"/>
+                    <ComboBoxItem Content="3 tháng"/>
+                    <ComboBoxItem Content="4 tháng"/>
+                    <ComboBoxItem Content="5 tháng"/>
+                    <ComboBoxItem Content="6 tháng"/>
+                    <ComboBoxItem Content="7 tháng"/>
+                    <ComboBoxItem Content="8 tháng"/>
+                    <ComboBoxItem Content="9 tháng"/>
+                    <ComboBoxItem Content="10 tháng"/>
+                    <ComboBoxItem Content="11 tháng"/>
+                    <ComboBoxItem Content="1 năm"/>
+                    <ComboBoxItem Content="Trên 1 năm"/>
+                </ComboBox>
+                <TextBlock FontSize="18" Foreground="#FF284241" FontWeight="Bold" HorizontalAlignment="Left" Margin="53,225,0,0" TextWrapping="Wrap" Text="Kỹ năng" VerticalAlignment="Top"/>
+
+                <TextBox x:Name="txbSkill" Padding="5" FontWeight="Medium" BorderThickness="1.5" BorderBrush="#FF284241" Background="Transparent" MaxLength="3000" FontSize="15" Foreground="#FF284241" AcceptsReturn="True" TextWrapping="Wrap" TextAlignment="Left" Margin="133,225,62,756"/>
+
+                <TextBox x:Name="txbDescription" Padding="5" FontWeight="Medium" BorderThickness="1.5" BorderBrush="#FF284241" Background="Transparent" MaxLength="3000" FontSize="15" Foreground="#FF284241" AcceptsReturn="True" TextWrapping="Wrap" TextAlignment="Left" Margin="133,843,62,169" RenderTransformOrigin="0.5,0.5">
+                    <TextBox.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBox.RenderTransform>
+                </TextBox>
+
+                <TextBox x:Name="txbField" FontWeight="Medium" IsEnabled="False" FontSize="15" Text="" BorderThickness="1.5" BorderBrush="#FF284241" Background="Transparent" HorizontalAlignment="Left" Margin="300,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Height="30" Padding="2" GotFocus="txbField_GotFocus" LostFocus="txbField_LostFocus"/>
+                <TextBox x:Name="txbSalaryFrom" FontWeight="Medium" IsEnabled="False" FontSize="15" Text="" BorderThickness="1.5" BorderBrush="#FF284241" Background="Transparent" HorizontalAlignment="Center" Margin="0,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Height="30" Padding="2" GotFocus="txbSalaryFrom_GotFocus" LostFocus="txbSalaryFrom_LostFocus"/>
+                <TextBox x:Name="txbSalaryTo" FontWeight="Medium" IsEnabled="False" FontSize="15" Text="" BorderThickness="1.5" BorderBrush="#FF284241" Background="Transparent" HorizontalAlignment="Left" Margin="544,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Height="30" Padding="2" GotFocus="txbSalaryTo_GotFocus" LostFocus="txbSalaryTo_LostFocus"/>
+                <TextBox x:Name="txbDateOfPost"  IsEnabled="False" FontSize="15" Text="" BorderThickness="1.5" BorderBrush="#FF284241" Background="Transparent" HorizontalAlignment="Left" Margin="634,1109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" Height="30" Padding="2" GotFocus="txbDateOfPost_GotFocus" LostFocus="txbDateOfPost_LostFocus"/>
+                <TextBlock FontSize="18" Foreground="#FF284241" FontWeight="Bold" HorizontalAlignment="Left" Margin="39,1110,0,0" TextWrapping="Wrap" Text="Số lượng" VerticalAlignment="Top" Width="83" TextAlignment="Right"/>
+                <ComboBox x:Name="cbbNumOfRecrui" FontSize="14" Style="{StaticResource cbb}" HorizontalAlignment="Left" Margin="133,1109,0,0" VerticalAlignment="Top" Width="111" Foreground="#FFF9F2E8" Height="30" SelectionChanged="cbbNumOfRecrui_SelectionChanged">
+                    <ComboBox.ItemContainerStyle>
+                        <Style BasedOn="{StaticResource cbbItem}" TargetType="{x:Type ComboBoxItem}"/>
+                    </ComboBox.ItemContainerStyle>
+                    <ComboBoxItem Content="Chọn"/>
+                    <ComboBoxItem Content="1 người"/>
+                    <ComboBoxItem Content="2 người"/>
+                    <ComboBoxItem Content="3 người"/>
+                    <ComboBoxItem Content="4 người"/>
+                    <ComboBoxItem Content="5 người"/>
+                    <ComboBoxItem Content="Trên 5 người"/>
+                </ComboBox>
+                <TextBox x:Name="txbNumOfRecrui" FontWeight="Medium" IsEnabled="False" FontSize="15" Text="" BorderThickness="1.5" BorderBrush="#FF284241" Background="Transparent" HorizontalAlignment="Left" Margin="255,1109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" Height="30" Padding="2" GotFocus="txbNumOfRecrui_GotFocus" LostFocus="txbNumOfRecrui_LostFocus"/>
+                <TextBox x:Name="txbSalaryNote" FontWeight="Medium" IsEnabled="False" FontSize="15" Text="" BorderThickness="1.5" BorderBrush="#FF284241" Background="Transparent" HorizontalAlignment="Left" Margin="713,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" Height="30" Padding="2" GotFocus="txbSalaryNote_GotFocus" LostFocus="txbSalaryNote_LostFocus"/>
+                <TextBlock FontSize="18" Foreground="#FF284241" HorizontalAlignment="Left" Margin="695,174,0,0" TextWrapping="Wrap" Text="/" VerticalAlignment="Top"/>
+                <TextBlock FontSize="18" Foreground="#FF284241" FontWeight="Bold" HorizontalAlignment="Left" Margin="54,513,0,0" TextWrapping="Wrap" Text="Phúc lợi" VerticalAlignment="Top"/>
+                <TextBox x:Name="txbWelfare" Padding="5" FontWeight="Medium" BorderThickness="1.5" BorderBrush="#FF284241" Background="Transparent" MaxLength="3000" FontSize="15" Foreground="#FF284241" AcceptsReturn="True" TextWrapping="Wrap" TextAlignment="Left" Margin="133,513,62,426"/>
+
+            </Grid>
+        </ScrollViewer>
+        <Button x:Name="btnPost" Style="{StaticResource btnPost}" FontWeight="Bold" Background="#FF284241" Content="Đăng" FontSize="13" HorizontalAlignment="Left" Margin="706,419,0,0" VerticalAlignment="Top" Width="79" Height="30" Click="btnPost_Click"/>
+        <Button x:Name="btnPostReview" Style="{StaticResource btnPostReview}" FontWeight="Bold" Content="Xem trước" FontSize="13" HorizontalAlignment="Left" Margin="613,419,0,0" VerticalAlignment="Top" Width="79" Height="30" Click="btnPostReview_Click"/>
+        <Button x:Name="btnSave" Visibility="Collapsed" Style="{StaticResource btnPost}" FontWeight="Bold" Background="#FF284241" Content="Lưu" FontSize="13" HorizontalAlignment="Left" Margin="706,419,0,0" VerticalAlignment="Top" Width="79" Height="30" Click="btnSave_Click" />
+        <Button x:Name="btnExit" Visibility="Collapsed" Style="{StaticResource btnPost}" FontWeight="Bold" Background="#FF284241" Content="Thoát" FontSize="13" HorizontalAlignment="Left" Margin="517,419,0,0" VerticalAlignment="Top" Width="79" Height="30" Click="btnExit_Click" />
+    </Grid>
+</UserControl>

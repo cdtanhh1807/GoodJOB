@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="GoodJOB.TopCVSeekerUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GoodJOB"
+             mc:Ignorable="d" 
+             d:DesignHeight="520" d:DesignWidth="850">
+    <UserControl.Resources>
+        <Style TargetType="Button" x:Key="btnWDLogin">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" Background="#F9F2e8" BorderBrush="#FF284241" BorderThickness="2">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#FFDFD5C8"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="border" Property="Background" Value="#FFDFD5C8"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#FFC2B9AE"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="btnControl">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" BorderThickness="0" Background="Transparent">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="#516d6b"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="False">
+                                <Setter Property="Foreground" Value="#FF284241"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Transparent"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Foreground" Value="#FF3B5351"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid x:Name="main" Background="#F9F2e8">
+        <Border Background="#FF284241" Opacity="0.1" Margin="655,25,-4,456"/>
+        <TextBlock x:Name="txblDay" FontSize="14" Foreground="#FF284241" FontWeight="Medium" FontStyle="Italic" HorizontalAlignment="Left" Margin="668,34,0,0" TextWrapping="Wrap" Text="Cập nhật ngày 16/10/2000" VerticalAlignment="Top"/>
+        <TextBlock FontSize="28" Foreground="#FF284241" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,63,0,0" TextWrapping="Wrap" Text="BẢNG XẾP HẠNG ỨNG VIÊN" VerticalAlignment="Top"/>
+        <Button x:Name="btnExit" Style="{StaticResource btnWDLogin}" Content="Trở lại" FontSize="17" FontWeight="Bold" Foreground="#FF284241" HorizontalAlignment="Left" Margin="23,25,0,0" VerticalAlignment="Top" Height="39" Width="100" Click="btnExit_Click"/>
+        <ScrollViewer x:Name="scr" Margin="15,126,15,76" VerticalScrollBarVisibility="Hidden">
+            <WrapPanel x:Name="wrap" Orientation="Horizontal" Loaded="wrap_Loaded">
+
+            </WrapPanel>
+        </ScrollViewer>
+        <Button x:Name="btnPre" Style="{StaticResource btnControl}" FontSize="20" Foreground="#FF284241" Content="◀" HorizontalAlignment="Left" Margin="367,454,0,0" VerticalAlignment="Top" Height="26" Width="26" Click="btnPre_Click"/>
+        <Button x:Name="btnNext" Style="{StaticResource btnControl}" Content="▶" Foreground="#FF284241" FontSize="20" HorizontalAlignment="Left" Margin="456,454,0,0" VerticalAlignment="Top" Height="26" Width="26" Click="btnNext_Click"/>
+        <TextBlock x:Name="txbl" FontSize="19" HorizontalAlignment="Center" Margin="0,454,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="40" TextAlignment="Center"/>
+    </Grid>
+</UserControl>

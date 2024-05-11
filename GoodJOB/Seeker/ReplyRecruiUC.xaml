@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="GoodJOB.ReplyRecruiUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GoodJOB"
+             mc:Ignorable="d" 
+             d:DesignHeight="520" d:DesignWidth="850">
+    <UserControl.Resources>
+        <Style TargetType="Button" x:Key="btnPost">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="btn" BorderThickness="1.5" BorderBrush="#FF061615" Background="#FF284241" Opacity="1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="#F9F2e8"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="False">
+                                <Setter Property="Foreground" Value="#F9F2e8"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="btn" Property="Background" Value="#516d6b"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="False">
+                                <Setter TargetName="btn" Property="Background" Value="#FF284241"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Foreground" Value="#F9F2e8"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="btn" Property="Background" Value="#FF3B5351"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="btnPostReview">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" BorderThickness="1" BorderBrush="#FF284241" Background="Transparent">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#516d6b"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="#F9F2e8"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="border" Property="Background" Value="#516d6b"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#FF3B5351"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid x:Name="gridMain" Background="#F9F2e8" Loaded="gridMain_Loaded">
+        <Border Background="#FF284241" Opacity="0.1" Margin="10,10,228,422"></Border>
+        <TextBlock Foreground="#FF284241" FontSize="18" FontWeight="Bold"  HorizontalAlignment="Left" Margin="20,21,0,0" TextWrapping="Wrap" Text="Ngày phỏng vấn" VerticalAlignment="Top"/>
+        <TextBlock Foreground="#FF284241" FontSize="18" FontWeight="Bold"  HorizontalAlignment="Left" Margin="20,59,0,0" TextWrapping="Wrap" Text="Địa điểm" VerticalAlignment="Top"/>
+        <Border Background="#FF284241" Opacity="0.1" Margin="10,106,10,10"/>
+        <Button Style="{StaticResource btnPost}" FontWeight="Bold" Content="Đồng ý" FontSize="15" HorizontalAlignment="Left" Margin="737,10,0,0" VerticalAlignment="Top" Width="103" Height="88"/>
+        <Button Style="{StaticResource btnPostReview}" FontWeight="Bold" Content="Từ chối" FontSize="15" HorizontalAlignment="Left" Margin="629,10,0,0" VerticalAlignment="Top" Width="103" Height="88"/>
+        <Border Background="#F9F2e8" Opacity="0.7" Margin="171,21,242,471"></Border>
+        <Border Background="#F9F2e8" Opacity="0.7" Margin="109,59,242,433"/>
+        <Border Background="#F9F2e8" Opacity="0.7" Margin="20,413,20,20"/>
+        <ScrollViewer x:Name="scr" Margin="20,106,20,112" VerticalScrollBarVisibility="Auto" MouseEnter="scr_MouseEnter" Height="292">
+            <StackPanel x:Name="stackChat">
+            </StackPanel>
+        </ScrollViewer>
+        <ScrollViewer Margin="20,413,20,20" VerticalScrollBarVisibility="Hidden">
+            <TextBox x:Name="txbInput" MaxLength="1000" AcceptsReturn="True" Background="Transparent" CaretBrush="#FF284241" Padding="4" FontSize="15" TextWrapping="Wrap" PreviewKeyDown="txbInput_PreviewKeyDown"/>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

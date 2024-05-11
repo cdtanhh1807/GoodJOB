@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="GoodJOB.AutoGrowingTextBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GoodJOB"
+             mc:Ignorable="d" 
+             d:Height="Auto" Width="Auto">
+    <Grid>
+        <Border Background="Transparent" Padding="5">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <TextBox x:Name="txb" IsReadOnly="True" FontSize="15" Width="300" Height="auto" Padding="5" TextWrapping="Wrap" HorizontalAlignment="Left" BorderThickness="0" BorderBrush="#F9F2e8" Background="#F9F2e8"></TextBox>
+            </ScrollViewer>
+        </Border>
+    </Grid>
+</UserControl>

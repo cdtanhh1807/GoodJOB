@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="GoodJOB.SeekerChatUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GoodJOB"
+             mc:Ignorable="d" 
+             d:DesignHeight="520" d:DesignWidth="850">
+    <UserControl.Resources>
+        <Style TargetType="Button" x:Key="btnCheckCV">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" BorderThickness="0" BorderBrush="#F9F2e8" Background="Transparent">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#516d6b"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="border" Property="Background" Value="#516d6b"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#FF3B5351"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid x:Name="mainGrid" Loaded="mainGrid_Loaded">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Background="#F9F2e8">
+            <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="0,23,0,26">
+                <StackPanel x:Name="stack">
+
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+        <Grid Grid.Column="1" Background="#FF284241">
+            <Border x:Name="bd" Background="#F9F2e8" Opacity="0.1" Margin="19,56,19,81"></Border>
+            <Border x:Name="bdInput" Background="Transparent" BorderThickness="1" BorderBrush="#F9F2e8" Margin="19,444,53,10">
+                <TextBox x:Name="txbInput" Foreground="#F9F2e8" Text="Nhập để chat..." MaxLength="1000" AcceptsReturn="True" BorderThickness="0" Background="Transparent" CaretBrush="#F9F2e8" Padding="4" FontSize="15" TextWrapping="Wrap" PreviewKeyDown="txbInput_PreviewKeyDown" LostFocus="txbInput_LostFocus" GotFocus="txbInput_GotFocus"/>
+            </Border>
+            <Border x:Name="bdSend" Background="Transparent" BorderThickness="1" BorderBrush="#F9F2e8" Margin="372,444,19,10">
+                <Button x:Name="btnSend" Style="{StaticResource btnCheckCV}" Foreground="#F9F2e8" Content="▲" FontWeight="Black" FontSize="20" Margin="0,0,0,37" Click="btnSend_Click" />
+            </Border>
+            <Border Background="#FF284241" Margin="370,445,51,11"></Border>
+            <TextBlock x:Name="txbName" Foreground="#F9F2e8" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Margin="19,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <ScrollViewer x:Name="scr" VerticalScrollBarVisibility="Visible" Margin="19,65,19,88">
+                <StackPanel x:Name="stackChat"></StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</UserControl>

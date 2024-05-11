@@ -1,0 +1,90 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Asset 20%403x.png" />
+    <None Remove="cBw2Al.tif%403x.png" />
+    <None Remove="Company\Asset 24%403x.png" />
+    <None Remove="Company\Asset 25%403x.png" />
+    <None Remove="Company\avt.jpg" />
+    <None Remove="Company\avt2.jpg" />
+    <None Remove="Company\avt2.png" />
+    <None Remove="Home\Artboard 31%402x.png" />
+    <None Remove="LVZvkA.tif %282%29%403x.png" />
+    <None Remove="NqmQlL.tif %282%29%403x.png" />
+    <None Remove="Picture\Asset 20%403x.png" />
+    <None Remove="Picture\Asset 24%403x.png" />
+    <None Remove="Picture\Asset 25%403x.png" />
+    <None Remove="Picture\avt.jpg" />
+    <None Remove="Picture\avt2.jpg" />
+    <None Remove="Picture\cBw2Al.tif%403x.png" />
+    <None Remove="Picture\LVZvkA.tif %282%29%403x.png" />
+    <None Remove="Picture\NqmQlL.tif %282%29%403x.png" />
+    <None Remove="Picture\search%403x.png" />
+    <None Remove="Picture\search%403xM.png" />
+    <None Remove="Picture\sort.jpg" />
+    <None Remove="Picture\wTXuN4.tif%403x.png" />
+    <None Remove="Picture\XzvCGD.tif %282%29%403x.png" />
+    <None Remove="search%403x.png" />
+    <None Remove="search%403xM.png" />
+    <None Remove="Seeker\Asset 25%403x.png" />
+    <None Remove="Seeker\avt2.jpg" />
+    <None Remove="Seeker\avt2.png" />
+    <None Remove="Seeker\star.png" />
+    <None Remove="sort.jpg" />
+    <None Remove="wTXuN4.tif%403x.png" />
+    <None Remove="XzvCGD.tif %282%29%403x.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Company\Asset 24@3x.png" />
+    <Resource Include="Company\Asset 25@3x.png" />
+    <Resource Include="Company\avt2.png" />
+    <Resource Include="Home\Artboard 31@2x.png" />
+    <Resource Include="Picture\Artboard 2.png" />
+    <Resource Include="Picture\Artboard 5.png" />
+    <Resource Include="Picture\Asset 1.png" />
+    <Resource Include="Picture\Asset 2.png" />
+    <Resource Include="Picture\Asset 20@3x.png" />
+    <Resource Include="Picture\Asset 24@3x.png" />
+    <Resource Include="Picture\Asset 25@3x.png" />
+    <Resource Include="Picture\Asset 3.png" />
+    <Resource Include="Picture\avt.jpg" />
+    <Resource Include="Picture\avt2.jpg" />
+    <Resource Include="Picture\BG10.png" />
+    <Resource Include="Picture\BG5.png" />
+    <Resource Include="Picture\BG7.png" />
+    <Resource Include="Picture\BG8.png" />
+    <Resource Include="Picture\cBw2Al.tif@3x.png" />
+    <Resource Include="Picture\Logo1.png" />
+    <Resource Include="Picture\Logo2.png" />
+    <Resource Include="Picture\LVZvkA.tif (2)@3x.png" />
+    <Resource Include="Picture\LVZvkA.tif%402x.png" />
+    <Resource Include="Picture\NqmQlL.tif (2)@3x.png" />
+    <Resource Include="Picture\NqmQlL.tif%402x.png" />
+    <Resource Include="Picture\search@3x.png" />
+    <Resource Include="Picture\search@3xM.png" />
+    <Resource Include="Picture\sort.jpg" />
+    <Resource Include="Picture\u3oODq.tif%402x.png" />
+    <Resource Include="Picture\wTXuN4.tif@3x.png" />
+    <Resource Include="Picture\XzvCGD.tif (2)@3x.png" />
+    <Resource Include="Picture\XzvCGD.tif%402x.png" />
+    <Resource Include="Picture\z5212877507275_66e937d68653aaaa8392e38df9e555e8.jpg" />
+    <Resource Include="Seeker\Asset 25@3x.png" />
+    <Resource Include="Seeker\avt2.png" />
+    <Resource Include="Seeker\star.png" />
+  </ItemGroup>
+
+</Project>

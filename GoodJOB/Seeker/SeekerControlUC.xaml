@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="GoodJOB.SeekerControlUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GoodJOB"
+             mc:Ignorable="d" 
+             d:DesignHeight="520" d:DesignWidth="50">
+    <UserControl.Resources>
+        <Style TargetType="Button" x:Key="btnUCFunc">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="Transparent"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" BorderThickness="0" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="Transparent"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="False">
+                                <Setter Property="Foreground" Value="Transparent"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#516d6b"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#FF3B5351"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" Value="#516d6b"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid Background="#FF284241">
+        <Button x:Name="btnInfor" Style="{StaticResource btnUCFunc}" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" Height="43" Width="50" Click="btnInfor_Click">
+            <Image Height="25" Width="21" Source="/Picture/LVZvkA.tif (2)@3x.png" />
+        </Button>
+        <Button x:Name="btnRecrui" Style="{StaticResource btnUCFunc}" HorizontalAlignment="Center" Margin="0,122,0,0" VerticalAlignment="Top" Height="43" Width="50" Click="btnRecrui_Click">
+            <Image Height="25" Width="21" Source="/Picture/XzvCGD.tif (2)@3x.png" />
+        </Button>
+        <Button x:Name="btnManageRectui" Style="{StaticResource btnUCFunc}" HorizontalAlignment="Right" Margin="0,219,0,0" VerticalAlignment="Top" Height="43" Width="50" Click="btnManageRectui_Click">
+            <Image Height="25" Width="21" Source="/Picture/NqmQlL.tif (2)@3x.png" />
+        </Button>
+        <Button x:Name="btnExit" Style="{StaticResource btnUCFunc}" HorizontalAlignment="Center" Margin="0,425,0,0" VerticalAlignment="Top" Height="43" Width="50" Click="btnExit_Click">
+            <Image Height="25" Width="21" Source="/Picture/Asset 20@3x.png" />
+        </Button>
+        <Button x:Name="btnChat" Style="{StaticResource btnUCFunc}" HorizontalAlignment="Center" Margin="0,320,0,0" VerticalAlignment="Top" Height="43" Width="50" Click="btnChat_Click">
+            <Image Height="25" Width="21" Source="/Seeker/Asset 25@3x.png" />
+        </Button>
+    </Grid>
+</UserControl>

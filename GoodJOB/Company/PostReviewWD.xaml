@@ -1,0 +1,147 @@
+﻿<Window x:Class="GoodJOB.PostReviewWD"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GoodJOB"
+        xmlns:media="clr-namespace:System.Windows.Media.Animation;assembly=PresentationCore"
+        xmlns:controls="clr-namespace:System.Windows.Controls;assembly=PresentationFramework"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        Title="" Height="600" Width="850" MouseLeftButtonDown="Window_MouseLeftButtonDown" x:Name="PostReviewWDAni" Loaded="PostReviewWDAni_Loaded">
+    <Window.RenderTransform>
+        <ScaleTransform ScaleX="1" ScaleY="1"/>
+    </Window.RenderTransform>
+    <Window.RenderTransformOrigin>
+        <Point X="0.5" Y="0.5"/>
+    </Window.RenderTransformOrigin>
+    <Window.Resources>
+        <Storyboard x:Key="WindowLoadAnimation">
+            <DoubleAnimation Storyboard.TargetName="PostReviewWDAni" 
+                 Storyboard.TargetProperty="RenderTransform.(ScaleTransform.ScaleX)" 
+                 From="0" To="1" Duration="0:0:0.27" />
+            <DoubleAnimation Storyboard.TargetName="PostReviewWDAni" 
+                 Storyboard.TargetProperty="RenderTransform.(ScaleTransform.ScaleY)" 
+                 From="0" To="1" Duration="0:0:0.27" />
+        </Storyboard>
+
+        <Style TargetType="Button" x:Key="btnWDSignUp">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" BorderThickness="1" BorderBrush="#F9F2e8" Background="Transparent">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#516d6b"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="border" Property="Background" Value="#516d6b"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#FF3B5351"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="btnWDLogin">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" Background="#F9F2e8" BorderThickness="0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#FFDFD5C8"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="border" Property="Background" Value="#FFDFD5C8"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#FFC2B9AE"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="btnWDForget">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" BorderThickness="0" Background="Transparent">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="#FFE8DDCE"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="False">
+                                <Setter Property="Foreground" Value="#F9F2e8"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Transparent"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Foreground" Value="#FFD6C3AA"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid x:Name="MainGrid" Background="#FF284241">
+
+        <Border Background="#F9F2e8" Margin="57,52,324,468"></Border>
+        <Border Background="#F9F2e8" Margin="563,52,57,330" Opacity="0.1"/>
+        <Border Background="#F9F2e8" Margin="564,270,56,324"/>
+        <Border Background="#F9F2e8" Margin="61,147,324,373" Opacity="0.1"/>
+        <Border Background="#F9F2e8" Margin="57,147,789,373"/>
+        <Border Background="#F9F2e8" Margin="57,290,324,206" Opacity="0.1"/>
+        <Border Background="#F9F2e8" Margin="59,441,321,55" Opacity="0.1"/>
+        <Border Background="#FF284241" Margin="61,185,324,411"></Border>
+
+        <ScrollViewer Margin="59,290,322,206" VerticalScrollBarVisibility="Auto">
+            <TextBlock x:Name="txbSkill" Text="ahsiodaoisdjoaisjdoaisjd " Foreground="#F9F2e8" Padding="8" FontSize="14" TextWrapping="Wrap"></TextBlock>
+        </ScrollViewer>
+
+        <ScrollViewer Margin="60,441,320,55" VerticalScrollBarVisibility="Auto">
+            <TextBlock x:Name="txbDescription" Text="ahsiodaoisdjoaisjdoaisjd" Foreground="#F9F2e8" Padding="8" FontSize="14" TextWrapping="Wrap"></TextBlock>
+        </ScrollViewer>
+        <Border Background="#F9F2e8" Margin="295,147,551,373"/>
+        <TextBlock x:Name="txblJobName" Foreground="#FF284241" FontSize="25" FontWeight="Bold" HorizontalAlignment="Left" Margin="74,60,0,0" TextTrimming="CharacterEllipsis" Text="Dev BackEnd Java" VerticalAlignment="Top" Height="34" Width="351"/>
+        <TextBlock x:Name="txblTypeOfWork" Foreground="#FF284241" FontSize="15" FontStyle="Italic" FontFamily="Arial" HorizontalAlignment="Left" Margin="74,101,0,0" TextWrapping="Wrap" Text="Full-time" VerticalAlignment="Top" Height="18" Width="225"/>
+        <TextBlock x:Name="txblField" Foreground="#FF284241" FontSize="15" FontStyle="Italic" TextAlignment="Right" FontFamily="Arial" HorizontalAlignment="Left" Margin="386,68,0,0" TextWrapping="Wrap" Text="Công nghệ" VerticalAlignment="Top" Height="18" Width="130"/>
+        <TextBlock x:Name="txblPostingDate" Foreground="#FF284241" FontSize="15" FontStyle="Italic" TextAlignment="Right" FontFamily="Arial" HorizontalAlignment="Left" Margin="319,101,0,0" TextWrapping="Wrap" Text="Ngày đăng: " VerticalAlignment="Top" Height="18" Width="197"/>
+        <TextBlock  Foreground="#F9F2e8" FontSize="15" HorizontalAlignment="Left" Margin="74,156,0,0" TextWrapping="Wrap" Text="Mức lương" VerticalAlignment="Top" Height="23" Width="73"/>
+        <TextBlock  Foreground="#F9F2e8" FontSize="15" HorizontalAlignment="Left" Margin="74,196,0,0" TextWrapping="Wrap" Text="Hợp đồng" VerticalAlignment="Top" Height="22" Width="68"/>
+        <TextBlock  Foreground="#F9F2e8" FontSize="15" HorizontalAlignment="Left" Margin="313,156,0,0" TextWrapping="Wrap" Text="Kinh nghiệm" VerticalAlignment="Top" Height="23" Width="84"/>
+        <TextBlock  Foreground="#F9F2e8" FontSize="15" HorizontalAlignment="Left" Margin="313,196,0,0" TextWrapping="Wrap" Text="Số lượng tuyển" VerticalAlignment="Top" Height="23" Width="102"/>
+        <TextBlock x:Name="txblSalary" Foreground="#F9F2e8" FontSize="15" FontWeight="Medium" HorizontalAlignment="Left" Margin="158,156,0,0" TextWrapping="Wrap" Text="1000$ - 2000$" TextAlignment="Center" VerticalAlignment="Top" Height="23" Width="132"/>
+        <TextBlock x:Name="txblWorkingTime" Foreground="#F9F2e8" FontSize="15" FontWeight="Medium" HorizontalAlignment="Left" Margin="158,196,0,0" TextWrapping="Wrap" Text="12 tháng" TextAlignment="Center" VerticalAlignment="Top" Height="23" Width="132"/>
+        <TextBlock x:Name="txblExp" Foreground="#F9F2e8" FontSize="15" FontWeight="Medium" HorizontalAlignment="Left" Margin="402,156,0,0" TextWrapping="Wrap" Text="3 năm" TextAlignment="Center" VerticalAlignment="Top" Height="23" Width="116"/>
+        <TextBlock x:Name="txblNumOfRecrui" Foreground="#F9F2e8" FontSize="15" FontWeight="Medium" HorizontalAlignment="Left" Margin="420,196,0,0" TextWrapping="Wrap" Text="2 người" TextAlignment="Center" VerticalAlignment="Top" Height="23" Width="98"/>
+        <TextBlock  Foreground="#F9F2e8" FontSize="18" FontWeight="Medium" HorizontalAlignment="Left" Margin="61,261,0,0" TextWrapping="Wrap" Text="Yêu cầu" VerticalAlignment="Top" Height="23" Width="65"/>
+        <TextBlock  Foreground="#F9F2e8" FontSize="18" FontWeight="Medium" HorizontalAlignment="Left" Margin="61,412,0,0" TextWrapping="Wrap" Text="Mô tả công việc" VerticalAlignment="Top" Height="23" Width="133"/>
+
+        <Border BorderThickness="1" BorderBrush="#F9F2e8" Margin="622,63,115,422">
+            <Image x:Name="img"></Image>
+        </Border>
+        <TextBlock x:Name="txblCompanyName" Foreground="#F9F2e8" FontSize="18" FontWeight="Medium" HorizontalAlignment="Left" Margin="569,186,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="Tập đoàn FPT" VerticalAlignment="Top" Height="23" Width="217"/>
+        <Button x:Name="btnExit" Style="{StaticResource btnWDForget}" FontSize="20" Foreground="#F9F2e8" Content="X" FontWeight="Bold" HorizontalAlignment="Left" Margin="818,10,0,0" VerticalAlignment="Top" Width="22" Click="btnExit_Click_1" Height="26"/>
+        <Button x:Name="btnViewCompany" Style="{StaticResource btnWDSignUp}" Content="Xem công ty" Foreground="#F9F2e8" FontWeight="Bold" HorizontalAlignment="Left" Margin="575,222,0,0" VerticalAlignment="Top" Height="34" Width="99" Click="btnViewCompany_Click"/>
+        <Border Background="#F9F2e8" Margin="564,315,56,58" Opacity="0.1"/>
+        <Button x:Name="btnRecrui" Style="{StaticResource btnWDLogin}" Foreground="#FF284241" Content="Ứng tuyển" FontWeight="Bold" HorizontalAlignment="Left" Margin="679,222,0,0" VerticalAlignment="Top" Height="34" Width="99" Click="btnRecrui_Click"/>
+        <TextBlock  Foreground="#F9F2e8" FontSize="18" FontWeight="Medium" HorizontalAlignment="Left" Margin="564,286,0,0" TextWrapping="Wrap" Text="Phúc lợi" VerticalAlignment="Top" Height="23" Width="72"/>
+        <ScrollViewer Margin="564,315,57,58" VerticalScrollBarVisibility="Auto">
+            <TextBlock x:Name="txbWelfare" Text="ahsiodaoisdjoaisjdoaisjd " Foreground="#F9F2e8" Padding="8" FontSize="14" TextWrapping="Wrap"></TextBlock>
+        </ScrollViewer>
+    </Grid>
+</Window>

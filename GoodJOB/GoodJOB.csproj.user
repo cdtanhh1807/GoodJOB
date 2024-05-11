@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="ChartUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CheckPostSeekerUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Company\CompanyChatUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Company\CompanyControlUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Company\CompanyInforUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Company\CompanyManageRecruiUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Company\CompanyRecruiUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Company\EditPostUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Company\InterviewWD.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Company\ItemSeekerChatUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Company\RecruiUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Company\ResumeRecruiWD.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Company\TopCVCompanyUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Home\CheckInforWD.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AutoGrowingTextBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ItemPostSeerUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PostSeekerWD.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Seeker\ItemCompanyChatUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Seeker\ManageRecruiUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Seeker\PostSeekerUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Seeker\ReplyRecruiUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Seeker\SeekerChatUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Seeker\SeekerManageRecrui.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Seeker\ExpUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Home\HomeWD.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Seeker\JobPostUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Company\ManagePostUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Company\PostReviewWD.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Company\PostUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Company\ResumeApplyUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Seeker\SeekerControlUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Seeker\SeekerInforUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Seeker\SeekerRecruiUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Home\SignUpWD.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Seeker\TopCVSeekerUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="TopSeekerUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="ChartUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CheckPostSeekerUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Company\CompanyChatUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Company\CompanyControlUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Company\CompanyInforUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Company\CompanyManageRecruiUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Company\CompanyRecruiUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Company\EditPostUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Company\InterviewWD.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Company\ItemSeekerChatUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Company\RecruiUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Company\ResumeRecruiWD.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Company\TopCVCompanyUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Home\CheckInforWD.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AutoGrowingTextBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ItemPostSeerUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PostSeekerWD.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Seeker\ItemCompanyChatUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Seeker\ManageRecruiUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Seeker\PostSeekerUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Seeker\ReplyRecruiUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Seeker\SeekerChatUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Seeker\SeekerManageRecrui.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Seeker\ExpUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Home\HomeWD.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Seeker\JobPostUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Company\ManagePostUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Company\PostReviewWD.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Company\PostUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Company\ResumeApplyUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Seeker\SeekerControlUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Seeker\SeekerInforUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Seeker\SeekerRecruiUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Home\SignUpWD.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Seeker\TopCVSeekerUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="TopSeekerUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>
